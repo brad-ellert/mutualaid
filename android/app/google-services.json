@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269243618765",
+    "project_id": "mutualaid-group",
+    "storage_bucket": "mutualaid-group.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269243618765:android:5193746da805a836a0e084",
+        "android_client_info": {
+          "package_name": "group.mutualaid.mutualaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269243618765-r9lj8u7j90lqjfoavshtnbvil8b06bt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1sWNgbjkhYC29r0bMRTM8PB6jssvEAsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269243618765-r9lj8u7j90lqjfoavshtnbvil8b06bt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
