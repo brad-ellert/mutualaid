@@ -1,35 +1,90 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# IntelliJ related
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
+# Logs
+logs/
+*.log
+
+# Local development
+.DS_Store
+Thumbs.db
+
+# Docker
+!docker/nginx/conf.d/nginx.conf
+
+# Project specific
+/staticfiles/
+/media/
+
+# Build directories
+/frontend/dist/
+/frontend/.sass-cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+
+# Local development
+.python-version
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+/media/
+*.sqlite3
+*.sqlite
+
+# Testing
+.coverage
+htmlcov/
 /build/
 
 # Symbolication related
