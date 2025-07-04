@@ -1,0 +1,79 @@
+// Custom variables
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+// Navbar customization
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+// Buttons
+.btn {
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  
+  &-primary {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba($primary, 0.2);
+    }
+  }
+}
+
+// Hero section
+.hero {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($primary, 0.05) 100%);
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 2rem;
+  
+  h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  p.lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: $gray-700;
+  }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(md) {
+  .hero {
+    padding: 3rem 0;
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    p.lead {
+      font-size: 1.25rem;
+    }
+  }
+}
