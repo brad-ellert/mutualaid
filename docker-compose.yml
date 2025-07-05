@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: mutualaid-backend
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./backend:/app
+      - ./backend/static:/app/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - mutualaid-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: mutualaid-frontend
+    restart: unless-stopped
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - mutualaid-network
+
+  db:
+    image: postgres:15-alpine
+    container_name: mutualaid-db
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    networks:
+      - mutualaid-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: mutualaid-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./backend/static:/static
+      - ./certs:/etc/letsencrypt
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - mutualaid-network
+
+networks:
+  mutualaid-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
